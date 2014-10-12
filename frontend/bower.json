@@ -1,0 +1,25 @@
+{
+    "name": "control front",
+    "version": "1.1.1",
+    "targetDir": "vendor/bower",
+    "dependencies": {
+        "requirejs": "~2.x.x",
+        "jquery": "~1.10.x",
+        "exoskeleton": "~0.5.x",
+        "jquery.customSelect": "master",
+        "jquery.cookie": "1.4.x",
+        "bootstrap": "3.x",
+        "parsleyjs": "2.x"
+    },
+    "exportsOverride": {
+        "requirejs": {
+            ".": "require.js"
+        },
+        "jquery": {
+            ".": "jquery.js"
+        },
+        "underscore": {
+            ".": "underscore.js"
+        }
+    }
+}

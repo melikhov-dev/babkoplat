@@ -1,0 +1,204 @@
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+#wrapper {
+  padding-left: 0;
+}
+
+#page-wrapper {
+  width: 100%;
+  padding: 5px 0px;
+}
+
+.panel-header{
+  border-bottom:1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+.navbar-horisontal-nav{
+  display: none;
+}
+
+
+.navbar-brand{
+  background-image: url('/images/babka72.png');
+  background-size: 36px 36px;
+  background-position: 0px center;
+  background-repeat: no-repeat;
+  padding-left: 41px;
+  font-size: 20px;
+  color: black !important;
+  margin-left: 10px;
+  -webkit-font-smoothing: antialiased;
+
+
+}
+
+.help-message-container{
+  padding:0 20px 0 27px;
+  font-size: 16px;
+}
+
+.help-message-before{
+  float: left;
+  font-size: 60px;
+  line-height: 53px;
+}
+
+.dropdown-name{
+  display: inline-block;
+  height: 16px;
+  .text-overflow();
+}
+
+.dropdown-name-capet{
+  margin-top: -3px;
+}
+
+.deal-name{
+  color: #333;
+  line-height: 25px;
+  display: block;
+  &:visited{
+    color: #333;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .dropdown-name{
+    max-width:210px;
+
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .only-mobile{
+    display: none !important;
+  }
+
+  .deal-name{
+    height: 127px;
+    overflow: hidden;
+  }
+
+  .navbar-horisontal-nav{
+    display: block;
+  }
+  #wrapper {
+
+  }
+
+  #page-wrapper {
+    //float: left;
+    padding: 15px 25px;
+  }
+
+  .container {
+    .container-fixed();
+    //margin: 0;
+    //padding: 0;
+
+    @media (min-width: @screen-sm-min) {
+      width: @container-sm ;
+    }
+    @media (min-width: @screen-md-min) {
+      width: @container-md ;
+    }
+    @media (min-width: @screen-lg-min) {
+      width: @container-lg ;
+    }
+  }
+
+  /* Side Nav */
+  .side-nav {
+    margin-left: -225px;
+    left: 225px;
+    width: 225px;
+    position: fixed;
+    top: 50px;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    background-color: #222222;
+    overflow-y: auto;
+  }
+
+  /* Bootstrap Default Overrides - Customized Dropdowns for the Side Nav */
+
+  .side-nav>li.dropdown>ul.dropdown-menu {
+    position: relative;
+    min-width: 225px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a {
+    color: #999999;
+    padding: 15px 15px 15px 25px;
+  }
+
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:hover,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a.active,
+  .side-nav>li.dropdown>ul.dropdown-menu>li>a:focus {
+    color: #fff;
+    background-color: #080808;
+  }
+
+  .side-nav>li>a {
+    width: 225px;
+  }
+
+  .navbar-inverse .side-nav>li>a:hover,
+  .navbar-inverse .side-nav>li>a:focus {
+    background-color: #080808;
+  }
+
+  .navbar-inverse .side-nav>li.active>a {
+    background-color: #428bca;
+    color: #fff;
+    &:hover{
+      color: #fff;
+      background-color: #428bca;
+    }
+  }
+
+
+}
+
+
+
+

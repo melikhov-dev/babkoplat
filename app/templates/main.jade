@@ -1,0 +1,16 @@
+.row
+    .col-xs-12.col-sm-6
+        h4 Вы можете платить где угодно
+        form(action="/", method="POST")
+            if message
+                .alert.alert-danger=message
+            .form-group
+                label(for='number') Номер заказа
+                input#sum.form-control.input-lg( name="number", placeholder='Введите номер заказа')
+            button.btn.btn-default.btn-lg.btn-block(type='submit') Открыть заказ
+
+        p
+            | Если вы хотите сохранить номер карты и историю платежей — скачайте приложение.
+    .col-xs-12.col-sm-6
+        .bigbabula
+

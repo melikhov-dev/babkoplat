@@ -1,0 +1,18 @@
+.row
+    .col-xs-12.col-sm-6
+        form(action="/", method="POST")
+            .form-group
+                dl.dl-horizontal
+                    dt Магазин
+                    dd !{market}
+                    dt Описание
+                    dd !{message}
+                    dt Сумма
+                    dd !{sum}
+            .show-not-phone
+                a.btn.btn-default.btn-lg.btn-block(href="#{url}") Оплатить
+    .col-xs-12.col-sm-6
+        .bigbabula.hide-phone
+            a.btn.btn-default.btn-lg.btn-block(href="#{url}") Оплатить
+
+

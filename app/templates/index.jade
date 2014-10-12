@@ -1,0 +1,35 @@
+//doctype html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"
+!!!
+html(lang="en")
+    head
+        title !{title}
+        meta(http-equiv="Content-Type", http-equiv="X-UA-Compatible", content="IE=edge", charset=utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="apple-touch-icon", href="/images/iphone_icon.png")
+        meta(name="description", content="#{meta_description}")
+        meta(name="keywords", content="#{meta_keywords}")
+
+        link(rel="stylesheet", href="/css/styles.201410120737.css")
+        //if lte IE 9
+            link(rel="stylesheet", href="//styles.ie.201410120737.css")
+        //if lt IE 9
+            script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+            script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+
+    body
+        #wrapper
+            .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+                .container
+                    .navbar-header
+                        a.navbar-brand(href="/")="Бабкоплат"
+
+            #page-wrapper
+                .container
+                    !{content}
+                    .about_footer
+                        hr
+                        | © 2014 Творческая артель «Котики, Пусечки и Единорожка»
+                        br
+                        a(href="/about") О проекте
+
+script(src="/js/all.201410120737.js")

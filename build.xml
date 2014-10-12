@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<project name="bb3" basedir="." default="build">
+
+    <!-- Sets the DSTAMP, TSTAMP and TODAY properties -->
+    <tstamp>
+        <format property="DATE" pattern="%y%m%d" locale="ru_RU"/>
+    </tstamp>
+
+    <taskdef name="buildconfig" classname="src.Flint.Phing.Tasks.FlintConfigBuildTask" />
+
+    <property file="build.properties" />
+
+    <target name="clean" description="Clean up and create artifact directories">
+        <delete dir="${build.tmp.dir}" verbose="false" failonerror="false" />
+    </target>
+
+    <target name="prepare" description="Create build dirs">
+        <mkdir dir="${log.dir}" mode="777" />
+        <mkdir dir="${build.tmp.dir}/scripts" mode="777" />
+        <mkdir dir="${app.cache.dir}" mode="777" />
+        <mkdir dir="${web.dir}/build" mode="777" />
+    </target>
+
+
+    <target name="rebuild.config" description="Rebuild config">
+        <copy file="${app.config.dir}/db.disabled/${db.file}" tofile="${app.config.dir}/${db}" overwrite="true" />
+        <buildconfig
+            tags="${subsystem}, ${env}"
+            vars="${config.vars}"
+            source="${app.config.dir}"
+            dest="${app.cache.dir}/config.php"
+        />
+    </target>
+
+    <target name="build.prepare" description="Build project">
+        <taskdef name="templatewarmup" classname="src.Flint.Phing.Tasks.TemplateWarmupTask" />
+
+        <exec command="crontab crontab.conf" passthru="true" />
+
+        <exec command="node_modules/grunt-cli/bin/grunt ${env}" dir="${frontend.dir}" passthru="true" />
+        <templatewarmup env="${env}" bootstrap="${bootstrap.file}" />
+
+        <copy todir="${web.dir}" overwrite="true">
+            <fileset dir="${web.dir}/build">
+            </fileset>
+        </copy>
+        <copy file="${app.cache.templates.dir}/templates.php.cache" tofile="${app.cache.templates.dir}/templates.php" overwrite="true" />
+        <copy file="${app.resources.dir}/index.php" tofile="${web.dir}/index.php" overwrite="true" />
+
+        <delete dir="${web.dir}/build" verbose="false" failonerror="false" />
+    </target>
+
+    <target name="build" depends="clean, prepare, rebuild.config, build.prepare" description="Build project">
+    </target>
+</project>

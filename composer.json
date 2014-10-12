@@ -1,0 +1,26 @@
+{
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "~1.1",
+        "phpunit/phpunit": "3.7.24",
+        "phing/phing": "dev-master",
+        "lukegb/jade.php": "dev-master",
+        "smirik/php-datetime-ago": "dev-master",
+        "pimple/pimple": "1.1.*@dev",
+        "marcojanssen/silex-routing-service-provider": "1.2.*",
+        "marcojanssen/silex-service-register-provider": "1.1.*",
+        "symfony/monolog-bridge": "~2.2",
+        "monolog/monolog": "1.*",
+        "yandex-money/yandex-money-sdk-php": "3.0.*",
+        "parse/php-sdk" : "1.0.*"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "repositories": {
+        "lukegb/jade.php": {
+            "type": "git",
+            "url": "git://github.com/zerkalica/jade.php.git"
+        }
+    }
+}

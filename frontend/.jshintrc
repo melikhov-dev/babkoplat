@@ -1,0 +1,38 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "immed": false,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "sub": true,
+    "undef": true,
+    "boss": true,
+    "eqnull": true,
+    "browser": true,
+    "trailing": true,
+    "camelcase": true,
+    "maxlen": 180,
+    "laxbreak": true,
+    "laxcomma": true,
+
+    "globals": {
+        "expect": true,
+        "describe": true,
+        "it": true,
+        "beforeEach": true,
+        "jasmine": true,
+        "alert": true,
+        "require": true,
+        "requirejs": true,
+        "console": true,
+        "define": true,
+        "jQuery": true,
+        "Backbone": true,
+        "_": true,
+        "Marionette": true,
+        "$": true,
+        "slice": true,
+        "throwError": true
+    }
+}

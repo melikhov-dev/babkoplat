@@ -1,0 +1,5 @@
+.grunt
+build
+node_modules
+npm*.log
+src/app.config.js
